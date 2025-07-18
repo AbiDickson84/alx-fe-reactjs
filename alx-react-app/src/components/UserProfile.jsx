@@ -1,4 +1,6 @@
-function UserProfile(props) {
+import React from 'react';
+
+const UserProfile = (props) => {
   return (
     <div>
       <h2>{props.name}</h2>
@@ -6,5 +8,6 @@ function UserProfile(props) {
       <p>Bio: {props.bio}</p>
     </div>
   );
-}
+};
+
 export default UserProfile;
