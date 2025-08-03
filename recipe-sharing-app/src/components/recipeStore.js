@@ -1,17 +1,36 @@
-import create from "zustand";
+import create from 'zustand';
 
-export const useRecipeStore = create((set) => ({
+const useRecipeStore = create((set) => ({
   recipes: [],
-  addRecipe: (newRecipe) =>
-    set((state) => ({ recipes: [...state.recipes, newRecipe] })),
-  updateRecipe: (updatedRecipe) =>
-    set((state) => ({
-      recipes: state.recipes.map((r) =>
-        r.id === updatedRecipe.id ? updatedRecipe : r
-      ),
-    })),
-  deleteRecipe: (id) =>
-    set((state) => ({
-      recipes: state.recipes.filter((r) => r.id !== id),
-    })),
+  searchTerm: '',
+  filteredRecipes: [],
+
+  addRecipe: (newRecipe) => set((state) => ({
+    recipes: [...state.recipes, newRecipe],
+    filteredRecipes: [...state.recipes, newRecipe] // Keep filtered list updated
+  })),
+
+  setSearchTerm: (term) => set((state) => {
+    const filtered = state.recipes.filter(recipe =>
+      recipe.title.toLowerCase().includes(term.toLowerCase()) ||
+      recipe.description.toLowerCase().includes(term.toLowerCase())
+    );
+    return { searchTerm: term, filteredRecipes: filtered };
+  }),
+
+  setRecipes: (recipes) => set({ recipes, filteredRecipes: recipes }),
+
+  deleteRecipe: (id) => set((state) => {
+    const updatedRecipes = state.recipes.filter(recipe => recipe.id !== id);
+    return { recipes: updatedRecipes, filteredRecipes: updatedRecipes };
+  }),
+
+  updateRecipe: (updatedRecipe) => set((state) => {
+    const updatedRecipes = state.recipes.map(recipe =>
+      recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    );
+    return { recipes: updatedRecipes, filteredRecipes: updatedRecipes };
+  })
 }));
+
+export default useRecipeStore;
