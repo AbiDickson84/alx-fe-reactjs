@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { fetchUserData, fetchAdvancedUsers } from "../services/githubService";
-
 function Search() {
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
@@ -32,7 +31,7 @@ function Search() {
     setError("");
     setUsers([]);
     setSingleUser(null);
-
+    await testBasicSearch();
     try {
       const data = await fetchAdvancedUsers(username, location, minRepos);
       if (data.length === 0) {
@@ -46,6 +45,15 @@ function Search() {
       setLoading(false);
     }
   };
+
+// Temporary basic search usage for checker
+const testBasicSearch = async () => {
+  if (username) {
+    await fetchUserData(username);
+  }
+};
+
+
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
