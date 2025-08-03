@@ -8,13 +8,12 @@ const EditRecipeForm = ({ recipe }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateRecipe(recipe.id, { title, description });
-    alert("Recipe updated!");
+    updateRecipe({ id: recipe.id, title, description });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Edit Recipe</h3>
+      <h2>Edit Recipe</h2>
       <input
         type="text"
         value={title}
@@ -24,7 +23,7 @@ const EditRecipeForm = ({ recipe }) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button type="submit">Save Changes</button>
+      <button type="submit">Update</button>
     </form>
   );
 };
