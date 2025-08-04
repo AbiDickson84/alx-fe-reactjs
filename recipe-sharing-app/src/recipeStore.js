@@ -7,13 +7,9 @@ const useRecipeStore = create((set) => ({
   favorites: [],
   recommendations: [],
 
-  // Existing Actions
   addRecipe: (newRecipe) => set((state) => {
     const updatedRecipes = [...state.recipes, newRecipe];
-    return {
-      recipes: updatedRecipes,
-      filteredRecipes: updatedRecipes
-    };
+    return { recipes: updatedRecipes, filteredRecipes: updatedRecipes };
   }),
 
   setRecipes: (recipes) => set({ recipes, filteredRecipes: recipes }),
@@ -38,7 +34,6 @@ const useRecipeStore = create((set) => ({
     return { recipes: updatedRecipes, filteredRecipes: updatedRecipes };
   }),
 
-  // ✅ New Actions for Favorites
   addFavorite: (recipeId) => set((state) => ({
     favorites: state.favorites.includes(recipeId)
       ? state.favorites
@@ -49,7 +44,6 @@ const useRecipeStore = create((set) => ({
     favorites: state.favorites.filter(id => id !== recipeId)
   })),
 
-  // ✅ Generate simple recommendations based on favorites
   generateRecommendations: () => set((state) => {
     const recommended = state.recipes.filter(recipe =>
       !state.favorites.includes(recipe.id) && Math.random() > 0.5
