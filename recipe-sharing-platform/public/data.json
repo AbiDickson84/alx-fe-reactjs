@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/600x350",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 eggs",
+      "50g grated Parmesan",
+      "Salt & black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti in salted boiling water.",
+      "Fry pancetta until crisp.",
+      "Whisk eggs with Parmesan and pepper.",
+      "Drain pasta (reserve a little water), toss with pancetta, remove from heat.",
+      "Quickly stir in egg mixture, loosening with pasta water if needed. Serve immediately."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/600x350",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup yogurt",
+      "2 tsp garam masala",
+      "1 onion, chopped",
+      "400g tomato puree",
+      "1/2 cup cream",
+      "Garlic, ginger, salt"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and spices; grill or pan-sear.",
+      "Sauté onion, garlic, and ginger.",
+      "Add tomato puree and simmer.",
+      "Stir in cream; add chicken and cook until coated and heated through.",
+      "Serve with rice or naan."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Beef Tacos",
+    "summary": "Mexican-style tacos filled with seasoned beef, lettuce, and cheese.",
+    "image": "https://via.placeholder.com/600x350",
+    "ingredients": [
+      "300g ground beef",
+      "Taco seasoning",
+      "Taco shells",
+      "Lettuce, shredded",
+      "Cheddar, grated",
+      "Salsa"
+    ],
+    "instructions": [
+      "Brown beef; add taco seasoning and a splash of water; simmer.",
+      "Warm taco shells.",
+      "Assemble with beef, lettuce, cheese, and salsa."
+    ]
+  }
+]
