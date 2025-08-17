@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import recipeData from "../data.json"; // ✅ Import JSON directly
+import recipeData from "../data.json"; // ✅ import mock JSON
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
-  // Load JSON data on mount
+  // Load recipes when component mounts
   useEffect(() => {
     setRecipes(recipeData);
   }, []);
@@ -32,9 +32,12 @@ const HomePage = () => {
                 {recipe.title}
               </h2>
               <p className="text-gray-600 mt-2">{recipe.summary}</p>
-              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
+              <a
+                href="#"
+                className="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+              >
                 View Recipe
-              </button>
+              </a>
             </div>
           </div>
         ))}
